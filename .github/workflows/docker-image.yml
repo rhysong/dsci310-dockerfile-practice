@@ -22,5 +22,6 @@ jobs:
       with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-    - name: Push to Docker
+    - name: Build and push Docker image
+      uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
       run: docker build . --file Dockerfile --tag ysong09/dockerassign3:latest
